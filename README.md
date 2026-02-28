@@ -51,6 +51,8 @@ Don't sit and watch a terminal. Set up a bridge to get notified on your phone:
 *   **[Signal Setup](./setup-signal.md)** - Private and self-hosted via Docker.
 *   **[OpenClaw Setup](./setup-openclaw.md)** - Bidirectional ChatOps (Control agents via Chat).
 *   **[⚡ ZeroClaw Setup](./setup-zeroclaw.md)** - The **Pro Pick**: Rust-based, ultra-lightweight ChatOps (<5MB RAM).
+*   **[🛡️ IronClaw Setup](./setup-ironclaw.md)** - The **Security Pick**: Industrial-grade security & WASM sandboxing.
+*   **[🚀 Advanced Workflows](./ADVANCED-WORKFLOWS.md)** - Deep Research, Visual Audits, and Design QA.
 *   **[🏆 Senior Engineer's Pick](./SENIOR-ENGINEER-PICK.md)** - The lightest way to control agents (Zero-RAM ntfy Bridge).
 *   **[ntfy.sh](https://ntfy.sh)** - The default bridge used in `cloud-init.yaml`.
 
