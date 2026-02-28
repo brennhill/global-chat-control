@@ -1,0 +1,71 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - tmux
+  - zellij
+  - git
+  - build-essential
+runcmd:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  - echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  - apt-get update
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  - curl -fsSL https://tailscale.com/install.sh | sh
+  - tailscale up --authkey=${tailscale_auth_key}
+  - curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/download/1.7.7/ttyd.x86_64
+  - chmod +x /usr/local/bin/ttyd
+  - |
+    cat << 'EOF' > /etc/systemd/system/ttyd.service
+    [Unit]
+    Description=ttyd web terminal
+    After=network.target
+    [Service]
+    ExecStart=/usr/local/bin/ttyd -W -p 7681 tmux new -A -s web-agents
+    Restart=always
+    User=root
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+  - systemctl enable --now ttyd
+  - curl -fsSL https://code-server.dev/install.sh | sh
+  - mkdir -p /root/.config/code-server
+  - |
+    cat << 'EOF' > /root/.config/code-server/config.yaml
+    bind-addr: 0.0.0.0:8080
+    auth: none
+    cert: false
+    EOF
+  - systemctl enable --now code-server@root
+  - mkdir -p /opt/webtop
+  - |
+    cat << 'EOF' > /opt/webtop/docker-compose.yml
+    services:
+      webtop:
+        image: lscr.io/linuxserver/webtop:ubuntu-xfce
+        container_name: webtop
+        security_opt:
+          - seccomp:unconfined
+        environment:
+          - PUID=1000
+          - PGID=1000
+          - TZ=Etc/UTC
+        volumes:
+          - /opt/webtop/config:/config
+        ports:
+          - 3000:3000
+        shm_size: "2gb"
+        restart: unless-stopped
+    EOF
+  - cd /opt/webtop && docker compose up -d
+  - |
+    cat << 'EOF' > /usr/local/bin/notify-agent
+    #!/bin/bash
+    curl -d "$1" -H "Title: Agent Request" -H "Tags: robot" ntfy.sh/${ntfy_topic}
+    EOF
+  - chmod +x /usr/local/bin/notify-agent
