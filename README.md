@@ -48,6 +48,7 @@ Don't sit and watch a terminal. Set up a bridge to get notified on your phone:
 *   **[WhatsApp Setup](./setup-whatsapp.md)** - Using the CallMeBot bridge.
 *   **[Signal Setup](./setup-signal.md)** - Private and self-hosted via Docker.
 *   **[OpenClaw Setup](./setup-openclaw.md)** - Bidirectional ChatOps (Control agents via Chat).
+*   **[🏆 Senior Engineer's Pick](./SENIOR-ENGINEER-PICK.md)** - The lightest way to control agents (Zero-RAM ntfy Bridge).
 *   **[ntfy.sh](https://ntfy.sh)** - The default bridge used in `cloud-init.yaml`.
 
 ---
