@@ -23,6 +23,11 @@ You need **Terraform** to deploy the infrastructure and **Tailscale** to access 
 3.  Copy `terraform.tfvars.example` to `terraform.tfvars` and fill it in.
 4.  Run `terraform init` and `terraform apply`.
 
+### Step C: Messaging Apps (Optional)
+If you prefer Discord or Telegram over the default `ntfy` bridge:
+1.  **Install Desktop Apps:** Download the [Discord](https://discord.com/download) or [Telegram](https://desktop.telegram.org/) desktop clients.
+2.  **Configure Bots/Webhooks:** Follow the [Discord Setup](./setup-discord.md) or [Telegram Setup](./setup-telegram.md) guides to create your bot and get your API keys before deploying.
+
 ---
 
 ## 📱 2. Phone Setup (Mobile Command)
@@ -31,19 +36,23 @@ Your phone is used for receiving instant alerts and replying to agents while you
 
 ### Step A: Install the Apps
 1.  **Tailscale (Required):** Install from the App Store/Play Store. Login to the same account as your laptop. Toggle "Connected."
-2.  **ntfy (Required):** Install the [ntfy app](https://ntfy.sh/).
+2.  **ntfy (Recommended):** Install the [ntfy app](https://ntfy.sh/).
     *   Click the **+** button to "Subscribe to topic."
     *   Enter the secret topic name you chose in your `terraform.tfvars`.
-3.  **Termius (Highly Recommended):** If you want a pro-grade terminal experience on your phone instead of a web browser, install **Termius**.
+3.  **Messaging Apps (Alternative):** Install the mobile apps for [Discord](./setup-discord.md), [Telegram](./setup-telegram.md), [WhatsApp](./setup-whatsapp.md), or [Signal](./setup-signal.md) if you are using those bridges.
+4.  **Termius (Highly Recommended):** If you want a pro-grade terminal experience on your phone instead of a web browser, install **Termius**.
 
 ### Step B: How to Reply to Agents
-When an agent needs input, your phone will buzz via the **ntfy** app.
-1.  **The Quick Way (Browser):** Tap the notification. It will open the `ttyd` web terminal in your mobile browser. (Ensure Tailscale is ON).
-2.  **The Pro Way (Termius):** 
+When an agent needs input, your phone will buzz via your chosen app.
+1.  **If using ntfy:** Tap the notification. It will open the `ttyd` web terminal in your mobile browser.
+2.  **If using Discord/Telegram/WhatsApp:** You will receive a message from your bot.
+    *   **Unidirectional:** Tap the link in the message to open the web terminal.
+    *   **Bidirectional (ZeroClaw/OpenClaw):** Simply reply to the message directly in the chat app.
+3.  **The Pro Way (Termius):** 
     *   Open Termius and add a new "Host."
-    *   Address: Use the **Tailscale IP** of your server (find this in the Tailscale app).
+    *   Address: Use the **Tailscale IP** of your server.
     *   Username: `root`
-    *   Now you can SSH into your server from anywhere and attach to your agent's session: `tmux attach -t web-agents`.
+    *   Now you can SSH into your server and attach: `tmux attach -t web-agents`.
 
 ---
 
