@@ -1,5 +1,9 @@
 # 🤖 Global Chat Control
 
+<p align="center">
+  <img src="assets/banner.svg" alt="Global Chat Control Banner" width="100%">
+</p>
+
 A cloud-native, persistent workspace for running multiple AI coding agents (Gemini, Claude, Codex) and UI-bound tools (Gasoline/Chrome) 24/7.
 
 ## 🚀 Why this exists
