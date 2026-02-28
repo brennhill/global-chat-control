@@ -49,7 +49,7 @@ Don't sit and watch a terminal. Set up a bridge to get notified on your phone:
 *   **[Telegram Setup](./setup-telegram.md)** - Lightweight and fast.
 *   **[WhatsApp Setup](./setup-whatsapp.md)** - Using the CallMeBot bridge.
 *   **[Signal Setup](./setup-signal.md)** - Private and self-hosted via Docker.
-*   **[OpenClaw Setup](./setup-openclaw.md)** - Bidirectional ChatOps (Control agents via Chat).
+*   **[OpenClaw Setup](./setup-openclaw.md)** - The **Ease-of-Use Pick**: Best plugin ecosystem and web UI.
 *   **[⚡ ZeroClaw Setup](./setup-zeroclaw.md)** - The **Pro Pick**: Rust-based, ultra-lightweight ChatOps (<5MB RAM).
 *   **[🛡️ IronClaw Setup](./setup-ironclaw.md)** - The **Security Pick**: Industrial-grade security & WASM sandboxing.
 *   **[🚀 Advanced Workflows](./ADVANCED-WORKFLOWS.md)** - Deep Research, Visual Audits, and Design QA.
