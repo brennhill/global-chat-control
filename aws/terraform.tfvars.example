@@ -1,0 +1,5 @@
+region             = "us-east-1"
+ami_id             = "ami-0e2c8caa4b6378d8c" # Ubuntu 24.04 LTS x86_64
+ssh_public_key     = "ssh-ed25519 AAAAC3... your_email"
+tailscale_auth_key = "tskey-auth-your_key_here"
+ntfy_topic         = "my_secret_ai_notifications_12345"

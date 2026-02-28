@@ -1,0 +1,6 @@
+project            = "your-gcp-project-id"
+region             = "us-central1"
+zone               = "us-central1-a"
+ssh_public_key     = "ssh-ed25519 AAAAC3... your_email"
+tailscale_auth_key = "tskey-auth-your_key_here"
+ntfy_topic         = "my_secret_ai_notifications_12345"

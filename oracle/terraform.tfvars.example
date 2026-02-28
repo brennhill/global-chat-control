@@ -1,0 +1,17 @@
+# Oracle Cloud Credentials
+tenancy_ocid        = "ocid1.tenancy.oc1..aaaaaaaaxxx"
+user_ocid           = "ocid1.user.oc1..aaaaaaaaxxx"
+fingerprint         = "xx:xx:xx:xx:xx:xx"
+private_key_path    = "~/.oci/oci_api_key.pem"
+region              = "us-ashburn-1"
+
+# Network & Compute Settings
+compartment_id      = "ocid1.compartment.oc1..aaaaaaaaxxx"
+availability_domain = "Uocm:US-ASHBURN-AD-1"
+subnet_id           = "ocid1.subnet.oc1.iad.aaaaaaaaxxx"
+image_id            = "ocid1.image.oc1.iad.aaaaaaaaxxx" # Ubuntu 24.04 ARM
+
+# AI Workspace Config
+ssh_public_key      = "ssh-ed25519 AAAAC3... your_email"
+tailscale_auth_key  = "tskey-auth-your_key_here"
+ntfy_topic          = "my_secret_ai_notifications_12345"

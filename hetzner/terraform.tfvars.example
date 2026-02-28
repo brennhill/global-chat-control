@@ -1,0 +1,4 @@
+hcloud_token       = "your_hcloud_api_token"
+ssh_public_key     = "ssh-ed25519 AAAAC3... your_email"
+tailscale_auth_key = "tskey-auth-your_key_here"
+ntfy_topic         = "my_secret_ai_notifications_12345"
