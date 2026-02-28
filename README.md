@@ -45,6 +45,8 @@ We provide Terraform configurations for the following clouds:
 Don't sit and watch a terminal. Set up a bridge to get notified on your phone:
 *   **[Discord Setup (Recommended)](./setup-discord.md)** - Best for project organization and threading.
 *   **[Telegram Setup](./setup-telegram.md)** - Lightweight and fast.
+*   **[WhatsApp Setup](./setup-whatsapp.md)** - Using the CallMeBot bridge.
+*   **[Signal Setup](./setup-signal.md)** - Private and self-hosted via Docker.
 *   **[ntfy.sh](https://ntfy.sh)** - The default bridge used in `cloud-init.yaml`.
 
 ---
