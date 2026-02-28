@@ -27,18 +27,16 @@ We provide Terraform configurations for the following clouds:
 
 ## 🛠️ Quick Start (3 Minutes)
 
-1.  **Choose a Provider:**
+1.  **[Device Setup](./setup-devices.md):** Ensure your laptop and phone are ready.
+2.  **Choose a Provider:**
     `cd digitalocean` (or your preferred cloud)
-
-2.  **Configure:**
+3.  **Configure:**
     `cp terraform.tfvars.example terraform.tfvars`
     Open `terraform.tfvars` and fill in your API tokens, SSH key, and Tailscale key.
-
-3.  **Deploy:**
+4.  **Deploy:**
     `terraform init`
     `terraform apply`
-
-4.  **Access:**
+5.  **Access:**
     *   **IDE (VS Code):** `http://<tailscale-ip>:8080`
     *   **Headless Desktop (Chrome/Gasoline):** `http://<tailscale-ip>:3000`
     *   **Web Terminal (Mobile):** `http://<tailscale-ip>:7681`
